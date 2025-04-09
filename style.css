@@ -1,20 +1,11 @@
-
 body {
-  font-family:'Times New Roman', Times, serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: rgb(249, 245, 245);
+  font-size: 15px;
   background-image: url(images/background.jpg);
-  background-size: cover;
   background-position: center;
   background-attachment: fixed;
   padding-top: 60px;
-}
-
-div {
-  background: rgba(8, 8, 8, 0.5);
-  padding: 20px;
-  border-radius: 50px;
-  width: 80%;
-  margin: auto;
 }
 
 h1 {
@@ -34,6 +25,14 @@ h2 {
   margin: auto;
   text-align: center;
 }
+
+ #contactForm {
+  background: rgba(8, 8, 8, 0.5);
+  border-radius: 50px;
+  width: 70%;
+  margin: auto;
+  text-align: center;
+ }
 
 nav {
   position: fixed;
@@ -86,10 +85,11 @@ th {
 input, textarea {
   width: 70%;
   padding: 8px;
-  border: 1px solid #ccc;
+  margin-top: 30px;
 }
 
 button {
+  margin: 10px;
   padding: 10px 15px;
   background-color: #007bff;
   color: white;
@@ -104,10 +104,22 @@ button:hover {
 img {
   display: block;
   margin: 10px auto;
-  max-width: 100%;
+  max-width: 80%;
 }
 
 iframe {
   display: block;
   margin: 10px auto;
+  width: 560px; 
+  height: 315px;
+  border: 0px;
+}
+
+#searchInput {
+  display: block;
+  width: 50%;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }

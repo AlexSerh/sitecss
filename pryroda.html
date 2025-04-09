@@ -3,6 +3,7 @@
 <head>
     <title>Природа</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"> </script>
 </head>
 <body>
 
@@ -16,16 +17,25 @@
 </nav>
 
 <h1>Природа</h1>
+
+<p>Пошук по назві місця:</p>
+
+<input type="text" id="searchInput" placeholder="Введіть назву">
+
+<button onclick="searchImages()">Шукати</button>
+
 <p>Красиві місця України:</p>
 
-<h2>Карпати</h2>
-<img src="images/carpathians.jpg" alt="Карпати">
+<div id="gallery">
+  <h2>Карпати</h2>
+  <img src="images/carpathians.jpg">
 
-<h2>Асканія-Нова</h2>
-<img src="images/askania.jpg" alt="Асканія-Нова">
+  <h2>Асканія-Нова</h2>
+  <img src="images/askania.jpg">
 
-<h2>Святі Гори</h2>
-<img src="images/sviati_hory.jpg" alt="Святі Гори">
+  <h2>Святі Гори</h2>
+  <img src="images/sviati_hory.jpg">
+</div>
 
 <button onclick="window.location.href='index.html';">На головну</button>
 
