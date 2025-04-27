@@ -32,12 +32,19 @@
 </table>
 
 <h2>Додати нове місто</h2>
-<form id="cityForm">
-    <input type="text" id="name" placeholder="Назва міста" required>
-    <input type="text" id="population" placeholder="Населення" required>
-    <input type="text" id="attractions" placeholder="Цікаві місця" required>
-    <button type="submit">Додати</button>
-</form>
+<button id="openModalButton">Додати місто</button>
+
+<div id="modalOverlay"></div>
+
+<div id="cityModal">
+    <form id="cityForm">
+        <input type="text" id="name" placeholder="Назва міста" required><br>
+        <input type="text" id="population" placeholder="Населення" required><br>
+        <input type="text" id="attractions" placeholder="Цікаві місця" required><br>
+        <button type="submit">Додати</button>
+        <button type="button" id="closeModalButton">Скасувати</button>
+    </form>
+</div>
 
 <button onclick="window.location.href='index.html';">На головну</button>
 
