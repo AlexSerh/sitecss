@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
+    <meta charset="UTF-8">
     <title>Міста</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"> </script>
+    <script type="module" src="script.js"></script>
 </head>
 <body>
 
@@ -18,28 +19,25 @@
 
 <h1>Відомі міста України</h1>
 
-<table>
-    <tr>
-        <th>Місто</th>
-        <th>Населення</th>
-        <th>Цікаві місця</th>
-    </tr>
-    <tr>
-        <td>Київ</td>
-        <td>2,95 млн</td>
-        <td>Софія Київська, Києво-Печерська лавра</td>
-    </tr>
-    <tr>
-        <td>Львів</td>
-        <td>710 тис.</td>
-        <td>Палац Потоцьких, Водоспад Шипіт</td>
-    </tr>
-    <tr>
-        <td>Вінниця</td>
-        <td>367 тис.</td>
-        <td>Водонапірна башта, Гайдамацький Яр</td>
-    </tr>
+<table id="citiesTable">
+    <thead>
+        <tr>
+            <th>Місто</th>
+            <th>Населення</th>
+            <th>Цікаві місця</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
 </table>
+
+<h2>Додати нове місто</h2>
+<form id="cityForm">
+    <input type="text" id="name" placeholder="Назва міста" required>
+    <input type="text" id="population" placeholder="Населення" required>
+    <input type="text" id="attractions" placeholder="Цікаві місця" required>
+    <button type="submit">Додати</button>
+</form>
 
 <button onclick="window.location.href='index.html';">На головну</button>
 
