@@ -98,6 +98,6 @@ window.toggleForm = function toggleForm() {
         closeModal();
         alert('Місто додано!');
     }
-});
+    });
 
   loadCities();
