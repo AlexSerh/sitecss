@@ -1,6 +1,5 @@
 (function($) {
   $.fn.bgscroll = function(options) {
-
     var x = $.extend({
       bgpositionx: 50,
       direction: "bottom",
@@ -19,9 +18,9 @@
     if ($(window).scrollTop() > b && $(window).scrollTop() < c) {
       var d = ($(window).scrollTop() - b) / (c - b) * 100;
 
-      "top" == x.direction && (d = 100 - d),
-          d > x.max && (d = x.max),
-          d < x.min && (d = x.min);
+      if (x.direction == "top") d = 100 - d;
+      if (d > x.max) d = x.max;
+      if (d < x.min) d = x.min;
 
       if (x.debug){
         console.log('Element background position: ' + d + ' %');
@@ -32,35 +31,32 @@
       backgroundPosition: x.bgpositionx + '% ' + d + '%'
     });
   };
-}(jQuery));
+})(jQuery);
 
-$(window).scroll(function(){
-  $('.bg1').bgscroll({
-    direction: 'bottom',
-    bgpositionx: 50,
-    debug: false,
-    min:0,
-    max:100
-  });
-  $('.bg2').bgscroll({
-    direction: 'top',
-    bgpositionx: 50,
-    debug: false,
-    min:0,
-    max:100
-  });
-  $('.bg3').bgscroll({
-    direction: 'top',
-    bgpositionx: 50,
-    debug: false,
-    min:0,
-    max:100
-  });
-  $('.bg4').bgscroll({
-    direction: 'bottom',
-    bgpositionx: 50,
-    debug: false,
-    min:0,
-    max:100
-  });
-})
+$(window).on('scroll', function(){
+  $('.bg1').bgscroll({ direction: 'bottom', bgpositionx: 50 });
+  $('.bg2').bgscroll({ direction: 'top', bgpositionx: 50 });
+  $('.bg3').bgscroll({ direction: 'top', bgpositionx: 50 });
+  $('.bg4').bgscroll({ direction: 'bottom', bgpositionx: 50 });
+});
+
+function revealElements() {
+  const reveals = document.querySelectorAll('.reveal');
+
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    const elementBottom = reveals[i].getBoundingClientRect().bottom;
+
+    const isVisible = elementTop < windowHeight && elementBottom > 0;
+
+    if (isVisible) {
+      reveals[i].classList.add('active');
+    } else {
+      reveals[i].classList.remove('active');
+    }
+  }
+}
+
+window.addEventListener('scroll', revealElements);
+window.addEventListener('load', revealElements);

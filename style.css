@@ -34,7 +34,7 @@ h2 {
   text-align: center;
  }
 
-nav {
+ nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -42,6 +42,8 @@ nav {
   background-color: #5db2f8;
   padding: 10px;
   text-align: center;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 nav a {
@@ -208,4 +210,36 @@ iframe {
 }
 .bg4 {
   background-image: url('images/bg4.jpg');
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.left {
+  transform: translateX(-60px);
+}
+.reveal.left.active {
+  transform: translateX(0);
+}
+
+.reveal.right {
+  transform: translateX(60px);
+}
+.reveal.right.active {
+  transform: translateX(0);
+}
+
+.reveal.bottom {
+  transform: translateY(60px);
+}
+.reveal.bottom.active {
+  transform: translateY(0);
 }
