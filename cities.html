@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Міста</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Інформація про історію, природу та визначні міста України. Вітаємо на нашому сайті!">
     <script type="module" src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="bgscroll.js"></script>
@@ -44,13 +46,13 @@
 <div id="modalOverlay"></div>
 
 <div id="cityModal" class="reveal bottom">
-    <form id="cityForm">
-        <input type="text" id="name" placeholder="Назва міста" required><br>
-        <input type="text" id="population" placeholder="Населення" required><br>
-        <input type="text" id="attractions" placeholder="Цікаві місця" required><br>
-        <button type="submit">Додати</button>
-        <button type="button" id="closeModalButton">Скасувати</button>
-    </form>
+<form id="cityForm" autocomplete="off">
+    <input type="text" id="name" placeholder="Назва міста" required autocomplete="organization"><br>
+    <input type="text" id="population" placeholder="Населення" required autocomplete="off"><br>
+    <input type="text" id="attractions" placeholder="Цікаві місця" required autocomplete="off"><br>
+    <button type="submit">Додати</button>
+    <button type="button" id="closeModalButton">Скасувати</button>
+</form>
 </div>
 
 </div>
